@@ -4,7 +4,7 @@ import os.path
 import numpy as np
 
 # make prediction on image saved on disk
-def prediction_path(path):
+def prediction_path(img_str):
     # load keras model
     model = define_model()
     model = model_weights(model)
@@ -13,16 +13,8 @@ def prediction_path(path):
     EMOTIONS = ['Angry', 'Disgusted', 'Fearful',
                 'Happy', 'Sad', 'Surprised', 'Neutral']
 
-    if os.path.exists(path):
-        # read the image
-        img = cv2.imread(path, 0)
-        # check if image is valid or not
-        if img is None:
-            print('Invalid image !!')
-            return 
-    else:
-        print('Image not found')
-        return
+    nparr = np.fromstring(img_str, np.uint8)
+    img = cv2.imdecode(nparr, cv2.CV_LOAD_IMAGE_COLOR)
 
     # resize image for the model
     img = cv2.resize(img, (48, 48))
@@ -30,6 +22,6 @@ def prediction_path(path):
     # do prediction
     result = model.predict(img)
 
-    detection='Detected emotion: ' + str(EMOTIONS[np.argmax(result[0])])
+    detection= str(EMOTIONS[np.argmax(result[0])])
     
     return detection
