@@ -1,7 +1,6 @@
 # utility file for emotion recognition from realtime webcam feed
 import cv2
 import sys
-from tensorflow.keras.models import load_model
 import time
 import numpy as np
 from decimal import Decimal
