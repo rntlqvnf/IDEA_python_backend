@@ -105,11 +105,3 @@ while True:
             for i in range(len(num)):
                 print(i+1, "\n제목: ", data_nothing['제목'][num[i]],"\n", data_nothing['가수'][num[i]])
 
-    elif input_num == 2:
-
-        print("프로그램을 종료합니다...")
-
-        break
-
-    print()
-
