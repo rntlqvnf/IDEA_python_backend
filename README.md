@@ -92,9 +92,9 @@
     "header": "EMOTIONAL_STATE",
     "recommended_list": {
         "music": [
-            "/sdcard/music/happy/crush_1.mp3",
-            "/sdcard/music/happy/iu_2.mp3",
-            "/sdcard/music/happy/mamamoo_1.mp3"
+            "/sdcard/music/crush_1.mp3",
+            "/sdcard/music/iu_2.mp3",
+            "/sdcard/music/mamamoo_1.mp3"
         ],
         "radio": [
             "http://fmbook.ebs.co.kr/fmbook/live_m4a/playlist.m3u8",
@@ -102,9 +102,9 @@
             "http://218.157.19.198:8000"
         ],
         "video": [
-            "/sdcard/video/happy/bol4_2.mp4",
-            "/sdcard/video/happy/bol4_3.mp4",
-            "/sdcard/video/happy/bol4_1.mp4"
+            "/sdcard/video/bol4_2.mp4",
+            "/sdcard/video/bol4_3.mp4",
+            "/sdcard/video/bol4_1.mp4"
         ],
         "youtube": [
             "https://www.youtube.com/watch?v=SqPVMqamjSk",
