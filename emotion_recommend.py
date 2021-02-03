@@ -50,7 +50,7 @@ def recommend_by_emotion(emotion, path):
         item = item_dict['item_name']
         amount_to_generate = item_dict['amount_to_generate']
         excel_path = './excel/' + item + '/' + emotion.lower() + '.xlsx' 
-        file_path = path + '/' + item + '/' + emotion +'/'
+        file_path = path + '/' + item + '/'
         raw_json_dict[item] = globals()['recommend_' + item](excel_path, file_path, amount_to_generate)
 
     return raw_json_dict

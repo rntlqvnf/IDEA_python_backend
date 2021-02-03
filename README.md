@@ -127,7 +127,7 @@
 
 - 음악, 비디오 파일 저장 경로
 
-  - ROOT_PATH/Resources/(Music, Video)/(파일명)
+  - ROOT_PATH/Resources/(music, video)/(파일명)
 
     ![File path pic](./assets/file_path.PNG)
 
