@@ -1,0 +1,51 @@
+INFO##2021-02-03 11:52:32,686##Server started
+INFO##2021-02-03 11:52:58,474##Wakeup Request
+INFO##2021-02-03 11:52:58,474##No socket
+INFO##2021-02-03 11:53:13,112##New socket added
+INFO##2021-02-03 11:57:36,295##Server started
+INFO##2021-02-03 11:57:39,281##Wakeup Request
+INFO##2021-02-03 11:57:39,281##No socket
+INFO##2021-02-03 11:57:41,639##New socket added
+INFO##2021-02-03 11:57:48,776##Emotion Request
+INFO##2021-02-03 11:57:51,543##write to socket {"result":"Fearful"}
+
+INFO##2021-02-03 11:58:07,362##Recommendations Request
+INFO##2021-02-03 11:58:07,823##write to socket {"analysis_result":"Angry","header":"EMOTIONAL_STATE","recommended_list":"{\"music\": [\"/sdcard/music/angry/samkim_1.mp3\", \"/sdcard/music/angry/dean_1.mp3\", \"/sdcard/music/angry/suran_1.mp3\"], \"video\": [\"/sdcard/video/angry/bol4_2.mp4\", \"/sdcard/video/angry/bol4_3.mp4\", \"/sdcard/video/angry/10cm_1.mp4\"], \"radio\": [\"http://onair.radiogfm.kr:8003\", \"http://218.157.19.198:8000\", \"http://fmbook.ebs.co.kr/fmbook/live_m4a/playlist.m3u8\"], \"youtube\": [\"https://www.youtube.com/watch?v=Cp56JdkmE9s\", \"https://www.youtube.com/watch?v=YfQzz00Oc_M\", \"https://www.youtube.com/watch?v=paFGJV0vFx4\"]}"}
+
+INFO##2021-02-03 11:58:43,788##Server started
+INFO##2021-02-03 11:58:43,788##Server started
+INFO##2021-02-03 11:58:59,193##Wakeup Request
+INFO##2021-02-03 11:58:59,193##Wakeup Request
+INFO##2021-02-03 11:58:59,193##No socket
+INFO##2021-02-03 11:58:59,193##No socket
+INFO##2021-02-03 11:59:12,480##Recommendations Request
+INFO##2021-02-03 11:59:12,480##Recommendations Request
+INFO##2021-02-03 11:59:13,098##No socket
+INFO##2021-02-03 11:59:13,098##No socket
+INFO##2021-02-03 12:00:16,264##Server started
+INFO##2021-02-03 12:00:19,976##New socket added
+INFO##2021-02-03 12:00:24,852##Recommendations Request
+INFO##2021-02-03 12:00:25,593##write to socket {"analysis_result":"Happy","header":"EMOTIONAL_STATE","recommended_list":{"music":["/sdcard/music/happy/crush_1.mp3","/sdcard/music/happy/iu_2.mp3","/sdcard/music/happy/mamamoo_1.mp3"],"radio":["http://fmbook.ebs.co.kr/fmbook/live_m4a/playlist.m3u8","http://radio.kfm.co.kr:8000/","http://218.157.19.198:8000"],"video":["/sdcard/video/happy/bol4_2.mp4","/sdcard/video/happy/bol4_3.mp4","/sdcard/video/happy/bol4_1.mp4"],"youtube":["https://www.youtube.com/watch?v=SqPVMqamjSk","https://www.youtube.com/watch?v=VN4EusA9zmE","https://www.youtube.com/watch?v=pHtxTSiPh5I"]}}
+
+INFO##2021-02-03 12:26:39,552##Server started
+INFO##2021-02-03 12:26:49,919##New socket added
+INFO##2021-02-03 12:27:03,636##Recommendations Request
+INFO##2021-02-03 12:27:04,306##write to socket {"analysis_result":"Angry","header":"EMOTIONAL_STATE","recommended_list":{"music":["/storage/sdcard/Resources/music/Angry/dean_1.mp3","/storage/sdcard/Resources/music/Angry/loco_1.mp3","/storage/sdcard/Resources/music/Angry/suran_1.mp3"],"radio":["http://fmbook.ebs.co.kr/fmbook/live_m4a/playlist.m3u8","http://218.157.19.198:8000","http://onair.radiogfm.kr:8003"],"video":["/storage/sdcard/Resources/video/Angry/bol4_3.mp4","/storage/sdcard/Resources/video/Angry/10cm_1.mp4","/storage/sdcard/Resources/video/Angry/bol4_2.mp4"],"youtube":["https://www.youtube.com/watch?v=YfQzz00Oc_M","https://www.youtube.com/watch?v=3Uyl_ifBiLE","https://www.youtube.com/watch?v=paFGJV0vFx4"]}}
+
+INFO##2021-02-03 12:28:01,798##Recommendations Request
+INFO##2021-02-03 12:28:02,239##write to socket {"analysis_result":"Disgusted","header":"EMOTIONAL_STATE","recommended_list":{"music":["/storage/sdcard/Resources/music/Disgusted/loco_3.mp3","/storage/sdcard/Resources/music/Disgusted/mamamoo_1.mp3","/storage/sdcard/Resources/music/Disgusted/crush_1.mp3"],"radio":["http://onair.radiogfm.kr:8003","http://radio.kfm.co.kr:8000/","http://fmbook.ebs.co.kr/fmbook/live_m4a/playlist.m3u8"],"video":["/storage/sdcard/Resources/video/Disgusted/jong_1.mp4","/storage/sdcard/Resources/video/Disgusted/loco_1.mp4","/storage/sdcard/Resources/video/Disgusted/melomance_1.mp4"],"youtube":["https://www.youtube.com/watch?v=EiVmQZwJhsA","https://www.youtube.com/watch?v=SqPVMqamjSk","https://www.youtube.com/watch?v=BzYnNdJhZQw"]}}
+
+INFO##2021-02-03 12:54:09,873##Server started
+INFO##2021-02-03 12:54:09,873##Server started
+INFO##2021-02-03 12:54:27,778##Recommendations Request
+INFO##2021-02-03 12:54:27,778##Recommendations Request
+INFO##2021-02-03 12:54:28,318##No socket
+INFO##2021-02-03 12:54:28,318##No socket
+INFO##2021-02-03 12:55:20,637##Server started
+INFO##2021-02-03 12:55:55,105##New socket added
+INFO##2021-02-03 12:55:58,249##Recommendations Request
+INFO##2021-02-03 12:55:58,824##write to socket {"analysis_result":"Happy","header":"EMOTIONAL_STATE","recommended_list":{"music":["/storage/sdcard/Resources/music/Happy/crush_1.mp3","/storage/sdcard/Resources/music/Happy/iu_2.mp3","/storage/sdcard/Resources/music/Happy/mamamoo_1.mp3"],"radio":["http://fmbook.ebs.co.kr/fmbook/live_m4a/playlist.m3u8","http://onair.radiogfm.kr:8003","http://218.157.19.198:8000"],"video":["/storage/sdcard/Resources/video/Happy/bol4_1.mp4","/storage/sdcard/Resources/video/Happy/bol4_2.mp4","/storage/sdcard/Resources/video/Happy/10cm_1.mp4"],"youtube":["https://www.youtube.com/watch?v=EiVmQZwJhsA","https://www.youtube.com/watch?v=SqPVMqamjSk","https://www.youtube.com/watch?v=CNeNwplE_aw"]}}
+
+INFO##2021-02-03 12:56:05,428##Recommendations Request
+INFO##2021-02-03 12:56:05,824##write to socket {"analysis_result":"Neutral","header":"EMOTIONAL_STATE","recommended_list":{"music":["/storage/sdcard/Resources/music/Neutral/sunmi_1.mp3","/storage/sdcard/Resources/music/Neutral/loco_3.mp3","/storage/sdcard/Resources/music/Neutral/iu_2.mp3"],"radio":["http://onair.radiogfm.kr:8003","http://218.157.19.198:8000","http://radio.kfm.co.kr:8000/"],"video":["/storage/sdcard/Resources/video/Neutral/jong_1.mp4","/storage/sdcard/Resources/video/Neutral/iu_1.mp4","/storage/sdcard/Resources/video/Neutral/melomance_1.mp4"],"youtube":["https://www.youtube.com/watch?v=EiVmQZwJhsA","https://www.youtube.com/watch?v=SqPVMqamjSk","https://www.youtube.com/watch?v=pHtxTSiPh5I"]}}
+

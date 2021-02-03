@@ -3,7 +3,6 @@
 from typing import OrderedDict
 import pandas as pd
 import random
-import json
 
 RECOMMEND_ITEMS = [
     {
@@ -51,9 +50,7 @@ def recommend_by_emotion(emotion, path):
         item = item_dict['item_name']
         amount_to_generate = item_dict['amount_to_generate']
         excel_path = './excel/' + item + '/' + emotion.lower() + '.xlsx' 
-        file_path = path + '/' + item + '/' + emotion.lower() +'/'
+        file_path = path + '/' + item + '/' + emotion +'/'
         raw_json_dict[item] = globals()['recommend_' + item](excel_path, file_path, amount_to_generate)
 
-    return json.dumps(raw_json_dict)
-
-recommend_by_emotion('Happy', '/path')
+    return raw_json_dict
