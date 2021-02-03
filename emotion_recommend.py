@@ -1,51 +1,59 @@
 # -*- coding: utf-8 -*- 
 
+from typing import OrderedDict
 import pandas as pd
 import random
-import constants as cs
+import json
 
-data_hap=pd.read_excel('./excel/song_happy.xlsx')
-data_sad=pd.read_excel('./excel/song_sad.xlsx')
-data_ang=pd.read_excel('./excel/song_ang.xlsx')
-data_surp=pd.read_excel('./excel/song_surp.xlsx')
-data_nothing=pd.read_excel('./excel/song_nothing.xlsx')
+RECOMMEND_ITEMS = [
+    {
+        'item_name':'music',
+        'amount_to_generate':3
+    }, 
+    {
+        'item_name':'video',
+        'amount_to_generate':3
+    }, 
+    {
+        'item_name':'radio',
+        'amount_to_generate':3
+    },     
+    {
+        'item_name':'youtube',
+        'amount_to_generate':3
+    }
+    ]
 
-song_no_hap=[]
-song_no_sad=[]
-song_no_surp=[]
-song_no_ang=[]
-song_no_nothing=[]
+def recommend_music(excel_path, file_path, amount_to_generate):
+    excel = pd.read_excel(excel_path)
+    recommend_list = [ file_path + excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
+    return recommend_list
 
-for i in range(len(data_hap['number'])):
-    song_no_hap.append(data_hap['number'][i])
-for i in range(len(data_sad['number'])):
-    song_no_sad.append(data_sad['number'][i])
-for i in range(len(data_surp['number'])):
-    song_no_surp.append(data_surp['number'][i])
-for i in range(len(data_ang['number'])):
-    song_no_ang.append(data_ang['number'][i])
-for i in range(len(data_nothing['number'])):
-    song_no_nothing.append(data_nothing['number'][i])
+def recommend_video(excel_path, file_path, amount_to_generate):
+    excel = pd.read_excel(excel_path)
+    recommend_list = [ file_path + excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
+    return recommend_list
 
-def recommend_by_emotion(emotion):
+def recommend_radio(excel_path, file_path, amount_to_generate):
+    excel = pd.read_excel(excel_path)
+    recommend_list = [ excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
+    return recommend_list
 
-    if emotion == 1:
-        num=random.sample(song_no_hap, 20)
-        for i in range(len(num)):
-            print(i+1, "\n제목: ", data_hap['제목'][num[i]],"\n", data_hap['가수'][num[i]])
-    elif emotion == 2:
-        num=random.sample(song_no_sad, 20)
-        for i in range(len(num)):
-            print(i+1, "\n제목: ", data_sad['제목'][num[i]],"\n", data_sad['가수'][num[i]])
-    elif emotion == 3:
-        num=random.sample(song_no_surp, 20)
-        for i in range(len(num)):
-            print(i+1, "\n제목: ", data_surp['제목'][num[i]],"\n", data_surp['가수'][num[i]])
-    elif emotion == 4:
-        num=random.sample(song_no_ang, 20)
-        for i in range(len(num)):
-            print(i+1, "\n제목: ", data_ang['제목'][num[i]],"\n", data_ang['가수'][num[i]])
-    elif emotion == 5:
-        num=random.sample(song_no_nothing, 20)
-        for i in range(len(num)):
-            print(i+1, "\n제목: ", data_nothing['제목'][num[i]],"\n", data_nothing['가수'][num[i]])
+def recommend_youtube(excel_path, file_path, amount_to_generate):
+    excel = pd.read_excel(excel_path)
+    recommend_list = [ excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
+    return recommend_list
+
+def recommend_by_emotion(emotion, path):
+
+    raw_json_dict = OrderedDict()
+    for item_dict in RECOMMEND_ITEMS:
+        item = item_dict['item_name']
+        amount_to_generate = item_dict['amount_to_generate']
+        excel_path = './excel/' + item + '/' + emotion.lower() + '.xlsx' 
+        file_path = path + '/' + item + '/' + emotion.lower() +'/'
+        raw_json_dict[item] = globals()['recommend_' + item](excel_path, file_path, amount_to_generate)
+
+    return json.dumps(raw_json_dict)
+
+recommend_by_emotion('Happy', '/path')
