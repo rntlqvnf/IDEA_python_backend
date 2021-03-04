@@ -1,37 +1,25 @@
-from socket import *
-from select import *
+import socket
+import json
+from collections import OrderedDict
 
-HOST = 'localhost'
-PORT = 6000
-BUFSIZE = 1024
-ADDR = (HOST, PORT)
+host = 'localhost' # 호스트 ip를 적어주세요
+port = 6000            # 포트번호를 임의로 설정해주세요
 
-# 소켓 생성
-serverSocket = socket(AF_INET, SOCK_STREAM)
+server_sock = socket.socket(socket.AF_INET)
+server_sock.bind((host, port))
+server_sock.listen(1)
 
-# 소켓 주소 정보 할당
-serverSocket.bind(ADDR)
-print('bind')
+print("기다리는 중")
+client_sock, addr = server_sock.accept()
 
-# 연결 수신 대기 상태
-serverSocket.listen(100)
-print('listen')
+print('Connected by', addr)
+data = client_sock.recv(1024)
+print(data, len(data))
 
-# 연결 수락
-clientSocket, addr_info = serverSocket.accept()
-print('accept')
-print('--client information--')
-print(clientSocket)
+#print(data2.encode())
+data2 = OrderedDict()
+data2["result"] = True
+client_sock.send(json.dumps(data2).encode('UTF-8'))
 
-# 클라이언트로부터 메시지를 가져옴
-while True:
-    data = clientSocket.recv(65535)
-    print('receive data : ',data.decode("utf-8"))
-    msg = data.decode("utf-8")
-    if msg == 'exit': # exit라는 메세지를 받으면 종료
-        break;
-
-# 소켓 종료
-clientSocket.close()
-serverSocket.close()
-print('close')
+client_sock.close()
+server_sock.close()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 
-from typing import OrderedDict
+from collections import OrderedDict
 import pandas as pd
 import random
 
@@ -23,34 +23,49 @@ RECOMMEND_ITEMS = [
     }
     ]
 
-def recommend_music(excel_path, file_path, amount_to_generate):
-    excel = pd.read_excel(excel_path)
+EMOTION_CONVERT = {
+    'Angry' : ['Neutral'], 
+    'Happy' : ['Happy'], 
+    'Sad' : ['Sad'], 
+    'Surprise' : ['Neutral'], 
+    'Neutral' : ['Neutral'],
+    'Other' : ['Angry', 'Happy', 'Sad', 'Surprise', 'Neutral'],
+    'None' : ['None']
+}
+
+def recommend_music(in_excel_path, emotion_excel_path, file_path, amount_to_generate):
+    emotion_excel = pd.read_excel(emotion_excel_path)
+    excel = pd.merge(in_excel_path,emotion_excel).drop_duplicates('Title').reset_index(drop = True)
     recommend_list = [ file_path + excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
     return recommend_list
 
-def recommend_video(excel_path, file_path, amount_to_generate):
-    excel = pd.read_excel(excel_path)
+def recommend_video(in_excel_path, emotion_excel_path, file_path, amount_to_generate):
+    emotion_excel = pd.read_excel(emotion_excel_path)
+    excel = pd.merge(in_excel_path,emotion_excel).drop_duplicates('Title').reset_index(drop = True)
     recommend_list = [ file_path + excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
     return recommend_list
 
-def recommend_radio(excel_path, file_path, amount_to_generate):
+def recommend_radio(in_excel_path, excel_path, file_path, amount_to_generate):
     excel = pd.read_excel(excel_path)
     recommend_list = [ excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
     return recommend_list
 
-def recommend_youtube(excel_path, file_path, amount_to_generate):
+def recommend_youtube(in_excel_path, excel_path, file_path, amount_to_generate):
     excel = pd.read_excel(excel_path)
     recommend_list = [ excel['Address'][i] for i in random.sample(range(len(excel['Address'])), amount_to_generate)]
     return recommend_list
 
 def recommend_by_emotion(emotion, path):
 
+    emotion =  random.choice(EMOTION_CONVERT[emotion])
     raw_json_dict = OrderedDict()
     for item_dict in RECOMMEND_ITEMS:
         item = item_dict['item_name']
         amount_to_generate = item_dict['amount_to_generate']
-        excel_path = './excel/' + item + '/' + emotion.lower() + '.xlsx' 
+
+        in_excep_path = pd.read_excel('./excel/' + item + '/in.xlsx')
+        emotion_excel_path = './excel/' + item + '/' + emotion.lower() + '.xlsx' 
         file_path = path + '/' + item + '/'
-        raw_json_dict[item] = globals()['recommend_' + item](excel_path, file_path, amount_to_generate)
+        raw_json_dict[item] = [] if emotion == 'None' else globals()['recommend_' + item](in_excep_path, emotion_excel_path, file_path, amount_to_generate)
 
     return raw_json_dict

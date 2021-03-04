@@ -1,11 +1,11 @@
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation, Dropout, Flatten, BatchNormalization
-from tensorflow.keras.layers import Conv2D
+from keras.models import Sequential
+from keras.layers import Dense, Activation, Dropout, Flatten, BatchNormalization
+from keras.layers import Conv2D
 from keras.utils import to_categorical
 from keras.callbacks import ModelCheckpoint
 from keras import callbacks
 from keras.callbacks import EarlyStopping
-from tensorflow.keras.layers import MaxPool2D
+from keras.layers import MaxPool2D
 import os.path 
 
 # define model
@@ -76,4 +76,3 @@ def model_weights(model):
     else:
         print('No model to load !')
     return model
-

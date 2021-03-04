@@ -1,0 +1,12 @@
+INFO##2021-03-04 20:40:07,148##Recommendations Request
+ERROR##2021-03-04 20:40:07,955##'_thread._local' object has no attribute 'value'
+INFO##2021-03-04 20:41:29,882##Wakeup Request
+INFO##2021-03-04 20:41:43,785##Recommendations Request
+ERROR##2021-03-04 20:41:43,788##'_thread._local' object has no attribute 'value'
+INFO##2021-03-04 20:42:54,844##Server On
+INFO##2021-03-04 20:43:03,218##Recommendations Request
+ERROR##2021-03-04 20:43:03,781##module 'tensorflow.python.framework.ops' has no attribute '_TensorLike'
+INFO##2021-03-04 20:44:43,548##Recommendations Request
+ERROR##2021-03-04 20:44:43,551##'_thread._local' object has no attribute 'value'
+INFO##2021-03-04 20:59:56,298##Recommendations Request
+ERROR##2021-03-04 20:59:56,302##'_thread._local' object has no attribute 'value'

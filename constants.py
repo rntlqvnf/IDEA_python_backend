@@ -1,2 +1,4 @@
 
-EMOTIONS = ['Angry', 'Disgusted', 'Fearful','Happy', 'Sad', 'Surprised', 'Neutral']
+EMOTIONS = ['Angry', 'Angry', 'Angry','Happy', 'Sad', 'Surprise', 'Neutral']
+
+SPECIAL_EMOTIONS  = ['Other', 'None']
